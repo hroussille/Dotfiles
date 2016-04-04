@@ -9,6 +9,6 @@ let g:indent_guides_enable_on_vim_startup = 0
 set background=dark
 let g:hybrid_reduced_contrast=1
 colorscheme hybrid
-let g:airline_theme='hybriline'
+let g:airline_theme='papercolor'
 
 
