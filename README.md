@@ -9,15 +9,16 @@ Thoose files require vim installed with spf13 configuration
 
 # INSTALL
 
-move or symlink according to the following :
+Copy the files to your home
+(note that symlinks are also possible)
 
 ```
-home/.vimrc.bundles.local -> repo/.vimrc.bundles.local
+mv .tmux.conf ~
 ```
 ```
-home/.vimrc.local -> repo/.vimrc.local
+mv .vimrc.bundles.local ~
 ```
 ```
-home/.tmux.conf -> repo/.tmux.conf
+mv .vimrc.local ~
 ```
 
