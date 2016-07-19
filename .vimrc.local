@@ -1,14 +1,131 @@
-set nospell
-set t_Co=256
+" no spell
+au BufNewFile,BufReadPost,FilterReadPost,FileReadPost  * set nospell
 
-let g:powerline_pycmd="py3"
-set encoding=utf8
-let g:airline_powerline_fonts=1
+" no tab highlight
 let g:indent_guides_enable_on_vim_startup = 0
 
-set background=dark
-let g:hybrid_reduced_contrast=1
-colorscheme hybrid
+" no backups
+set nobackup
+set nowritebackup
+
+
+" START Load vim-airline plugin "
+set t_Co=256
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" air-line
+let g:airline_powerline_fonts = 1
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+if !exists('g:airline_symbols')
+ let g:airline_symbols = {}
+ endif
+
+ "unicode symbols
+ let g:airline_left_sep = '»'
+ let g:airline_left_sep = '▶'
+ let g:airline_right_sep = '«'
+ let g:airline_right_sep = '◀'
+ let g:airline_symbols.linenr = '␊'
+ let g:airline_symbols.linenr = '␤'
+ let g:airline_symbols.linenr = '¶'
+ let g:airline_symbols.branch = '⎇'
+ let g:airline_symbols.paste = 'ρ'
+ let g:airline_symbols.paste = 'Þ'
+ let g:airline_symbols.paste = '∥'
+ let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbol
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
 let g:airline_theme='papercolor'
 
+" Set good python version for powerline
+let g:powerline_pycmd="py3"
 
+let g:cpp_class_scope_highlight = 1
+
+" Leave insert mode (like <esc>) and disable <esc>
+inoremap jk <esc>
+inoremap <special> <esc> <nop>
+inoremap <esc>^[ <esc>^[
+
+" Disable arrow keys
+
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" [> NERDTree <]
+
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+let NERDTreeQuitOnOpen=0
+
+" nerdtree window resize
+" let g:NERDTreeWinSize = 35
+
+" show hidden files
+let g:NERDTreeShowHidden=1
+
+" single click to open nodes
+" let g:NERDTreeMouseMode=3
+
+" ignored files
+let g:NERDTreeIgnore=['\.swp$', '\~$']
+
+" node vim
+
+autocmd User Node
+  \ if &filetype == "javascript" |
+  \   nmap <buffer> <C-w>f <Plug>NodeVSplitGotoFile |
+  \   nmap <buffer> <C-w><C-f> <Plug>NodeVSplitGotoFile |
+  \ endif
+
+
+"this allows buffers to be hidden if you've modified a buffer.
+" This is almost a must if you wish to use buffers in this way.
+set hidden
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>T :enew<cr>
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+" Delete buffer without closing vim
+nmap <leader>d :BD<CR>
+
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" Vim colorscheme
+let g:onedark_termcolors=256
+colorscheme onedark
+set background=dark
+
+" Always use system clipboard
+set clipboard=unnamedplus

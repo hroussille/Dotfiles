@@ -1,0 +1,7 @@
+Bundle 'leafgarland/typescript-vim'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'magarcia/vim-angular2-snippets'
+Bundle 'qpkorr/vim-bufkill'
+Bundle 'moll/vim-node'
+Bundle 'sheerun/vim-polyglot'
+Bundle 'christoomey/vim-tmux-navigator'
