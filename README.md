@@ -11,7 +11,13 @@ Thoose files require vim installed with spf13 configuration
 
 move or symlink according to the following :
 
-home/.vimrc.local -> repo/.vimrc.local
+```
 home/.vimrc.bundles.local -> repo/.vimrc.bundles.local
+```
+```
+home/.vimrc.local -> repo/.vimrc.local
+```
+```
 home/.tmux.conf -> repo/.tmux.conf
+```
 
