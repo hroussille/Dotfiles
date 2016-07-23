@@ -12,12 +12,10 @@
  * neovim
  * tmux
  * zsh
- * oh-my-zsh : https://github.com/robbyrussell/oh-my-zsh
- * bullet-train for oh-my-zsh : https://github.com/caiogondim/bullet-train-oh-my-zsh-theme
+ * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+ * [bullet-train for oh-my-zsh](https://github.com/caiogondim/bullet-train-oh-my-zsh-theme)
 
- There are some screenshots at the end of this README.
-
- My terminal is using the Monokai palette for Guake.
+ There are some screenshots at the end of this README. My terminal is using the Monokai palette for Guake.
 
 ## Install
 
@@ -51,7 +49,7 @@ edit the .zshrc to change the home directory according to yours.
 
 ## Influences
 
-My init.vim is LARGELY based on mhartington's : https://github.com/mhartington
+My init.vim is LARGELY based on [mhartington's](https://github.com/mhartington)
 
 You will find in his repos , some awesomes dotfiles , neovim themes etc...
 
