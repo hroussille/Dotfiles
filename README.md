@@ -55,7 +55,8 @@ Most of the credits for the neovim config goes to him.
 
 ## Result
 
-### Here a some screenshots of the result !
-
+## Terminal
 ![Alt text](img/terminal.png?raw=true "Title")
+
+## Neovim
 ![Alt text](img/neovim.png?raw=true "Title")
