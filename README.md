@@ -1,4 +1,4 @@
-#/home/hector My dotfiles
+# My dotfiles
 
 ## Content
 
