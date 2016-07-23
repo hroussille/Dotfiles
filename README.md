@@ -1,24 +1,50 @@
-# CONFIG
+# My dotfiles
 
-My vim and tmux configuration
+## Content
+
+ * neovim configuration : init.vim
+ * tmux configuration   : .tmux.conf
+ * zsg configuration    : .zshrc
 
 
-# DEPENDENCIES
+## Depencencies
 
-Thoose files require vim installed with spf13 configuration
+ * neovim
+ * tmux
+ * zsh
+ * oh-my-zsh : https://github.com/robbyrussell/oh-my-zsh
+ * bullet-train for oh-my-zsh : https://github.com/caiogondim/bullet-train-oh-my-zsh-theme
 
-# INSTALL
+## Install
 
-Copy the files to your home
-(note that symlinks are also possible)
+### Clone this repo 
 
+```sh
+$ git clone git@github.com:Happykat/Dotfiles.git
 ```
-mv .tmux.conf ~
+
+### Copy the files
+
+```sh
+$ cp .tmux.conf ~
 ```
+
+```sh
+$ cp init.vim $XDG_CONFIG_HOME/nvim
 ```
-mv .vimrc.bundles.local ~
-```
-```
-mv .vimrc.local ~
-```
+
+### Zsh
+
+edit your zshrc to change the home directory according to yours.
+
+``` "/home/hector" becomes your "$HOME" ```
+
+
+## Influences
+
+My init.vim is LARGELY based on mhartington's : https://github.com/mhartington
+
+You will find in his repos , some awesomes dotfiles , neovim themes etc...
+
+Most of the credits for the neovim config goes to him.
 
