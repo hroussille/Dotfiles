@@ -32,10 +32,15 @@ $ cp .tmux.conf ~
 ```sh
 $ cp init.vim $XDG_CONFIG_HOME/nvim
 ```
+$XDG_CONFIG_HOME might not be set for you , it default to /home/.config
+
+```sh
+$ cp .zshrc ~
+```
 
 ### Zsh
 
-edit your zshrc to change the home directory according to yours.
+edit the .zshrc to change the home directory according to yours.
 
 ``` "(YOUR_HOME)" becomes your actual home ```
 
