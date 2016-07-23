@@ -15,6 +15,10 @@
  * oh-my-zsh : https://github.com/robbyrussell/oh-my-zsh
  * bullet-train for oh-my-zsh : https://github.com/caiogondim/bullet-train-oh-my-zsh-theme
 
+ There are some screenshots at the end of this README.
+
+ My terminal is using the Monokai palette for Guake.
+
 ## Install
 
 ### Clone this repo 
