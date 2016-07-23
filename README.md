@@ -53,3 +53,9 @@ You will find in his repos , some awesomes dotfiles , neovim themes etc...
 
 Most of the credits for the neovim config goes to him.
 
+## Result
+
+### Here a some screenshots of the result !
+
+![Alt text](img/terminal.png?raw=true "Title")
+![Alt text](img/neovim.png?raw=true "Title")
