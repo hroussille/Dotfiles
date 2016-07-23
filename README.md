@@ -1,4 +1,4 @@
-# My dotfiles
+#/home/hector My dotfiles
 
 ## Content
 
@@ -37,7 +37,7 @@ $ cp init.vim $XDG_CONFIG_HOME/nvim
 
 edit your zshrc to change the home directory according to yours.
 
-``` "(YOUR_HOME)" becomes your "$HOME" ```
+``` "(YOUR_HOME)" becomes your actual home ```
 
 
 ## Influences
