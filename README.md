@@ -37,7 +37,7 @@ $ cp init.vim $XDG_CONFIG_HOME/nvim
 
 edit your zshrc to change the home directory according to yours.
 
-``` "/home/hector" becomes your "$HOME" ```
+``` "(YOUR_HOME)" becomes your "$HOME" ```
 
 
 ## Influences
