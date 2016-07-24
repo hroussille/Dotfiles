@@ -33,7 +33,7 @@ $ cp .tmux.conf ~
 $ cp init.vim $XDG_CONFIG_HOME/nvim
 ```
 
-$XDG_CONFIG_HOME might not be set for you , it default to /home/.config
+** $XDG_CONFIG_HOME might not be set for you , it default to /home/.config **
 
 ```sh
 $ mkdir ~/.config/nvim/undodir
@@ -45,7 +45,7 @@ $ cp .zshrc ~
 
 ### Zsh
 
-edit the .zshrc to change the home directory according to yours.
+** edit the .zshrc to change the home directory according to yours. **
 
 ``` "(YOUR_HOME)" becomes your actual home ```
 
