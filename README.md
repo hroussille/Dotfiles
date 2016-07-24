@@ -66,7 +66,7 @@ Screenshot taken under Guake terminal , with Monokai theme
 
 ![Alt text](img/terminal.png?raw=true "Title")
 
-## Neovim
+## [Neovim](https://github.com/neovim/neovim)
 
 The current theme is : [FlatColor by MaxSt](https://github.com/MaxSt/FlatColor)
 
