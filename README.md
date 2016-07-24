@@ -15,8 +15,6 @@
  * [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
  * [bullet-train for oh-my-zsh](https://github.com/caiogondim/bullet-train-oh-my-zsh-theme)
 
- There are some screenshots at the end of this README. My terminal is using the Monokai palette for Guake.
-
 ## Install
 
 ### Clone this repo 
@@ -34,8 +32,8 @@ $ cp .tmux.conf ~
 ```sh
 $ cp init.vim $XDG_CONFIG_HOME/nvim
 ```
+
 $XDG_CONFIG_HOME might not be set for you , it default to /home/.config
-Also to have persistant undo make sure to create the undodir directory :
 
 ```sh
 $ mkdir ~/.config/nvim/undodir
@@ -63,7 +61,15 @@ Most of the credits for the neovim config goes to him.
 ## Result
 
 ## Terminal
+
+Screenshot taken under Guake terminal , with Monokai theme
+
 ![Alt text](img/terminal.png?raw=true "Title")
 
 ## Neovim
+
+The current theme is : [FlatColor by MaxSt](https://github.com/MaxSt/FlatColor)
+
+Whith some tweaks on NERDTree , see the section themes in init.vim for more informations
+
 ![Alt text](img/neovim.png?raw=true "Title")

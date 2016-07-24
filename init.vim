@@ -1,12 +1,3 @@
-"|  \/  (_) |                        (_)
-"| .  . |_| | _____  ___   _ ____   ___ _ __ ___  _ __ ___
-"| |\/| | | |/ / _ \/ __| | '_ \ \ / / | '_ ` _ \| '__/ __|
-"| |  | | |   <  __/\__ \ | | | \ V /| | | | | | | | | (__
-"\_|  |_/_|_|\_\___||___/ |_| |_|\_/ |_|_| |_| |_|_|  \___|
-"
-" Author: Mike Hartington
-" repo  : https://github.com/mhartington/dotfiles/
-"
 " Setup dein  ---------------------------------------------------------------{{{
   if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
     call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
@@ -89,8 +80,8 @@
   call dein#add('NLKNguyen/papercolor-theme')
   call dein#add('joshdick/onedark.vim')
   call dein#add('godlygeek/csapprox')
-  call dein#add('freeo/vim-kalisi')
-
+  call dein#add('altercation/vim-colors-solarized')
+  call dein#add('MaxSt/FlatColor')
 
   if dein#check_install()
     call dein#install()
@@ -284,15 +275,22 @@
 
 " ThemesCommands, etc  ----------------------------------------------------{{{
 " Theme
-  syntax on
+  syntax enable 
   set background=dark
-  colorscheme onedark 
+  let g:flatcolor_terminal_italics = 1
+  colorscheme flatcolor 
   " no need to fold things in markdown all the time
   let g:vim_markdown_folding_disabled = 1
   " disable markdown auto-preview. Gets annoying
   let g:instant_markdown_autostart = 0
   " Keep my termo window open when I navigate away
   autocmd TermOpen * set bufhidden=hide
+  set cursorline
+
+  hi Folded guibg=#3c3c3c guifg=#aaaaaa
+  hi cursorline guibg=#3c3c3c
+  hi Directory guifg=#aaffe4
+
 "}}}
 
 " Fold, gets it's own section  ----------------------------------------------{{{
@@ -465,9 +463,9 @@ let g:neosnippet#snippets_directory='~/.config/repos/github.com/Shougo/neosnippe
       let g:ctrlp_user_command = 'ag %s -l --ignore-dir=node_modules --hidden -g ""'
   endif
 
-let g:ctrlp_show_hidden = 1
+  let g:ctrlp_show_hidden = 1
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.tmp/*,*/.sass-cache/*,*/node_modules/*,*.keep,*.DS_Store,*/.git/*
+  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.tmp/*,*/.sass-cache/*,*/node_modules/*,*.keep,*.DS_Store,*/.git/*
   let g:ctrlp_show_hidden = 1
 
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.tmp/*,*/.sass-cache/*,*/node_modules/*,*.keep,*.DS_Store,*/.git/
@@ -498,7 +496,3 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.tmp/*,*/.sass-cache/*,*/node_modules
   let g:airline#extensions#tabline#buffer_idx_mode = 1
 "}}}
 
-" Linting -------------------------------------------------------------------{{{
-
-
-"}}}
