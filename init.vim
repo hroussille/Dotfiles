@@ -1,8 +1,12 @@
+"|  \/  (_) |                        (_)
+"| .  . |_| | _____  ___   _ ____   ___ _ __ ___  _ __ ___
+"| |\/| | | |/ / _ \/ __| | '_ \ \ / / | '_ ` _ \| '__/ __|
+"| |  | | |   <  __/\__ \ | | | \ V /| | | | | | | | | (__
+"\_|  |_/_|_|\_\___||___/ |_| |_|\_/ |_|_| |_| |_|_|  \___|
+"
 " Author: Mike Hartington
 " repo  : https://github.com/mhartington/dotfiles/
-" Reviewd by Hector Roussille
-" repo  : https://github.com/Happykat/Dotfiles
-
+"
 " Setup dein  ---------------------------------------------------------------{{{
   if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
     call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
@@ -83,6 +87,10 @@
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('w0ng/vim-hybrid')
   call dein#add('NLKNguyen/papercolor-theme')
+  call dein#add('joshdick/onedark.vim')
+  call dein#add('godlygeek/csapprox')
+  call dein#add('freeo/vim-kalisi')
+
 
   if dein#check_install()
     call dein#install()
@@ -97,7 +105,12 @@
 
 " source ~/.local.vim
 " Neovim Settings
+ 
+  set undodir=~/.config/nvim/undodir
+  set undofile 
+  
   set clipboard+=unnamedplus
+
   set number
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   set relativenumber
@@ -120,8 +133,6 @@
   set wildmode=full
 " leader is, 
   let mapleader = ','
-  set undofile
-  set undodir="$HOME/.VIM_UNDO_FILES"
   set title
 " Remember cursor position between vim sessions
   autocmd BufReadPost *
@@ -274,11 +285,8 @@
 " ThemesCommands, etc  ----------------------------------------------------{{{
 " Theme
   syntax on
-
-  let g:hybrid_custom_term_colors = 1
-  let g:hybrid_reduced_contrast = 1 " Remove this line if using the default palette.
-  colorscheme hybrid 
   set background=dark
+  colorscheme onedark 
   " no need to fold things in markdown all the time
   let g:vim_markdown_folding_disabled = 1
   " disable markdown auto-preview. Gets annoying

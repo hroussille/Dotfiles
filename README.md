@@ -35,6 +35,11 @@ $ cp .tmux.conf ~
 $ cp init.vim $XDG_CONFIG_HOME/nvim
 ```
 $XDG_CONFIG_HOME might not be set for you , it default to /home/.config
+Also to have persistant undo make sure to create the undodir directory :
+
+```sh
+$ mkdir ~/.config/nvim/undodir
+```
 
 ```sh
 $ cp .zshrc ~
