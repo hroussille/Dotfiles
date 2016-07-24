@@ -4,7 +4,7 @@
 
  * neovim configuration : init.vim
  * tmux configuration   : .tmux.conf
- * zsg configuration    : .zshrc
+ * zsh configuration    : .zshrc
 
 
 ## Depencencies
