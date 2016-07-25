@@ -28,6 +28,7 @@
   call dein#add('tmux-plugins/vim-tmux')
   call dein#add('octol/vim-cpp-enhanced-highlight')
   call dein#add('Shougo/denite.nvim')
+
   set conceallevel=0
   call dein#add('mhartington/vim-folds')
   call dein#add('Yggdroot/indentLine')
@@ -53,11 +54,11 @@
   call dein#add('haya14busa/incsearch-easymotion.vim')
   call dein#add('haya14busa/incsearch-fuzzy.vim')
   call dein#add('easymotion/vim-easymotion')
+  call dein#add('neomake/neomake')
 
 " deoplete stuff
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('carlitux/deoplete-ternjs')
-  call dein#add('mhartington/deoplete-typescript')
   call dein#add('Shougo/neco-vim', {'on_ft': 'vim'})
   call dein#add('Shougo/neoinclude.vim')
   call dein#add('Konfekt/FastFold')
@@ -180,7 +181,12 @@
   nnoremap <silent> <leader>gr :Gread<CR>
   nnoremap <silent> <leader>gw :Gwrite<CR>
   nnoremap <silent> <leader>ge :Gedit<CR>
-  
+ 
+  " Navigate between buffers
+  nmap <Tab> :bnext<CR>
+  nmap <S-Tab> :bprevious<CR>
+  nmap <C-w> :Sayonara!<CR>
+
   " Disable arrow keys in normal mode
   nnoremap <up> <nop>
   nnoremap <down> <nop>
@@ -244,7 +250,6 @@
   vmap > >gv
   vnoremap <c-/> :TComment<cr>
   map <esc> :noh<cr>
-  autocmd FileType typescript nmap <buffer> <Leader>T : <C-u>echo tsuquyomi#hint()<CR>
 
   nnoremap <leader>e :call <SID>SynStack()<CR>
   function! <SID>SynStack()
@@ -285,11 +290,10 @@
   let g:instant_markdown_autostart = 0
   " Keep my termo window open when I navigate away
   autocmd TermOpen * set bufhidden=hide
-  set cursorline
 
   hi Folded guibg=#3c3c3c guifg=#aaaaaa
-  hi cursorline guibg=#3c3c3c
-  hi Directory guifg=#aaffe4
+  hi LineNr guibg=#3c3c3c
+  hi Directory guifg=#91ddff
 
 "}}}
 
@@ -403,7 +407,6 @@ let g:neosnippet#snippets_directory='~/.config/repos/github.com/Shougo/neosnippe
 
 " Typescript & Javscript omni complete --------------------------------------{{{
 
-  let g:tsuquyomi_disable_quickfix = 1
   let g:vim_json_syntax_conceal = 0
   set splitbelow
   set completeopt+=noselect
@@ -478,9 +481,6 @@ let g:neosnippet#snippets_directory='~/.config/repos/github.com/Shougo/neosnippe
   nnoremap <c-h> <c-w>h
   nnoremap <c-l> <c-w>l
 
-  nmap <leader>; :bnext<CR>
-  nmap <leader>l :bprevious<CR>
-  nmap <leader>d :Sayonara!<CR>
 "}}}
 
 " vim-airline ---------------------------------------------------------------{{{
@@ -496,3 +496,15 @@ let g:neosnippet#snippets_directory='~/.config/repos/github.com/Shougo/neosnippe
   let g:airline#extensions#tabline#buffer_idx_mode = 1
 "}}}
 
+
+" Linters  ---------------------------------------------------------------{{{
+
+autocmd! BufWritePost,BufEnter * Neomake
+
+" Configure Neomake Error and Warning sign color
+" Error is red :
+hi NeomakeErrorSign guifg=#FF0000
+" Warning is yellow :
+hi NeomakeWarningSign guifg=#FFFF00
+
+"}}}
