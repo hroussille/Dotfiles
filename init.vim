@@ -131,13 +131,17 @@
               \ if line("'\"") > 0 && line ("'\"") <= line("$") |
               \   exe "normal! g'\"" |
               \ endif
+
   " center buffer around cursor when opening files
   autocmd BufRead * normal zz
   let g:jsx_ext_required =1
   set complete=.,w,b,u,t,k
   let g:gitgutter_max_signs = 1000  " default value
   let g:indentLine_char='│'
+
+  " increase performances on indentLine
   let g:indentLine_faster=1
+
   " enable deoplete
   let g:deoplete#enable_at_startup = 1
   let g:deoplete#enable_ignore_case = 1
@@ -145,10 +149,10 @@
   let g:table_mode_corner="|"
   let g:dein#install_progress_type = 'none'
 
-  " augroup markdown
-  "   au!
-  "   au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-  " augroup END
+  " Auto chdir to current buffer
+  " autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! cd %:h | endif
+  set autochdir
+
 " }}}
 
 " System mappings  ----------------------------------------------------------{{{
@@ -183,9 +187,11 @@
   nnoremap <silent> <leader>ge :Gedit<CR>
  
   " Navigate between buffers
+  nmap <leader>; :bnext<CR>
+  nmap <leader>l :bprevious<CR>
+  nmap <leader>d :Sayonara!<CR>
   nmap <Tab> :bnext<CR>
   nmap <S-Tab> :bprevious<CR>
-  nmap <C-w> :Sayonara!<CR>
 
   " Disable arrow keys in normal mode
   nnoremap <up> <nop>
@@ -292,7 +298,7 @@
   autocmd TermOpen * set bufhidden=hide
 
   hi Folded guibg=#3c3c3c guifg=#aaaaaa
-  hi LineNr guibg=#3c3c3c
+  hi LineNr guibg=#3c3c3c guifg=#91ddff
   hi Directory guifg=#91ddff
 
 "}}}
