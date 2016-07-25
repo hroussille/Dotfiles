@@ -300,6 +300,7 @@
   hi Folded guibg=#3c3c3c guifg=#aaaaaa
   hi LineNr guibg=#3c3c3c guifg=#91ddff
   hi Directory guifg=#91ddff
+  hi CursorLine guibg=#4c4c4c 
 
 "}}}
 
