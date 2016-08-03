@@ -83,6 +83,8 @@
   call dein#add('godlygeek/csapprox')
   call dein#add('altercation/vim-colors-solarized')
   call dein#add('MaxSt/FlatColor')
+  call dein#add('flazz/vim-colorschemes')
+  call dein#add('mhartington/oceanic-next')
 
   if dein#check_install()
     call dein#install()
@@ -289,7 +291,7 @@
   syntax enable 
   set background=dark
   let g:flatcolor_terminal_italics = 1
-  colorscheme flatcolor 
+  colorscheme flatcolor
   " no need to fold things in markdown all the time
   let g:vim_markdown_folding_disabled = 1
   " disable markdown auto-preview. Gets annoying
@@ -297,10 +299,11 @@
   " Keep my termo window open when I navigate away
   autocmd TermOpen * set bufhidden=hide
 
-  hi Folded guibg=#3c3c3c guifg=#aaaaaa
-  hi LineNr guibg=#3c3c3c guifg=#91ddff
-  hi Directory guifg=#91ddff
-  hi CursorLine guibg=#4c4c4c 
+  hi Normal ctermbg=none
+  hi Folded ctermfg=243  ctermbg=none
+  hi LineNr ctermbg=none ctermfg=159
+  hi Directory ctermfg=159
+  hi CursorLine ctermbg=243
 
 "}}}
 
@@ -487,6 +490,10 @@ let g:neosnippet#snippets_directory='~/.config/repos/github.com/Shougo/neosnippe
   nnoremap <c-k> <c-w>k
   nnoremap <c-h> <c-w>h
   nnoremap <c-l> <c-w>l
+  tnoremap <c-h> <C-\><C-n><C-w>h
+  tnoremap <c-j> <C-\><C-n><C-w>j
+  tnoremap <c-k> <C-\><C-n><C-w>k
+  tnoremap <c-l> <C-\><C-n><C-w>l
 
 "}}}
 
