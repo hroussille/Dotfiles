@@ -502,11 +502,10 @@ set hidden
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='oceanicnext'
+let g:airline_theme='PaperColor'
 cnoreabbrev <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'Sayonara' : 'x'
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 "}}}
-
 
 " Linters  ---------------------------------------------------------------{{{
 
@@ -519,3 +518,38 @@ hi NeomakeErrorSign guifg=#FF0000
 hi NeomakeWarningSign guifg=#FFFF00
 
 "}}}
+
+" Terminal --------------------------------------------------------------------{{{
+
+" dark and grey
+let g:terminal_color_0  = "#3c3c3c"
+let g:terminal_color_8  = "#3c3c3c"
+
+" neurtral_red + bright_red
+let g:terminal_color_1  = "#F92672"
+let g:terminal_color_9  = "#F92672"
+
+" neutral_green + bright_green
+let g:terminal_color_2  = "#A6E22E"
+let g:terminal_color_10 = "#A6E22E"
+
+" neutral_yellow + bright_yellow
+let g:terminal_color_3  = "#FD971F"
+let g:terminal_color_11 = "#FD971F"
+
+" neutral_blue + bright_blue
+let g:terminal_color_4  = "#66D9EF"
+let g:terminal_color_12 = "#729FCF"
+
+" neutral_purple + bright_purple
+let g:terminal_color_5  = "#75507B"
+let g:terminal_color_13 = "#AD7FA8"
+
+" neutral_aqua + faded_aqua
+let g:terminal_color_6  = "#06989A"
+let g:terminal_color_14 = "#66D9EF"
+
+" light4 + light1
+let g:terminal_color_7  = "#ffffff"
+let g:terminal_color_15 = "#ffffff"
+"  }}}
