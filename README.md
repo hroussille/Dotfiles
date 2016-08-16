@@ -5,6 +5,7 @@
  * neovim configuration : init.vim
  * tmux configuration   : .tmux.conf
  * zsh configuration    : .zshrc
+ * tilda configuratin   : config_0
 
 
 ## Depencencies
