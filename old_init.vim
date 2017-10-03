@@ -1,116 +1,96 @@
 " Setup dein  ---------------------------------------------------------------{{{
+if (!isdirectory(expand("$HOME/.config/nvim/repos/github.com/Shougo/dein.vim")))
+  call system(expand("mkdir -p $HOME/.config/nvim/repos/github.com"))
+  call system(expand("git clone https://github.com/Shougo/dein.vim $HOME/.config/nvim/repos/github.com/Shougo/dein.vim"))
+endif
 
-call plug#begin('/home/hector/.confir/nvim/modules')
-" call dein#add('ctrlpvim/ctrlp.vim')
+set runtimepath+=~/.config/nvim/repos/github.com/Shougo/dein.vim/
+call dein#begin(expand('~/.config/nvim'))
+call dein#add('Shougo/dein.vim')
+call dein#add('ctrlpvim/ctrlp.vim')
 
 " syntax
-Plug 'sheerun/vim-polyglot'
+call dein#add('sheerun/vim-polyglot')
+call dein#add('othree/yajs.vim', {'on_ft': 'javascript'})
+call dein#add('othree/jsdoc-syntax.vim', {'on_ft':['javascript', 'typescript']})
+call dein#add('othree/es.next.syntax.vim', {'on_ft': 'javascript'})
+call dein#add('moll/vim-node')
+call dein#add('othree/javascript-libraries-syntax.vim')
+call dein#add('hail2u/vim-css3-syntax', {'on_ft':['css','scss']})
 let g:airline_powerline_fonts = 1
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'Shougo/denite.nvim'
+call dein#add('elzr/vim-json', {'on_ft': 'json'})
+call dein#add('tpope/vim-markdown', {'on_ft': 'markdown'})
+call dein#add('jtratner/vim-flavored-markdown', {'on_ft': 'markdown'})
+call dein#add('dhruvasagar/vim-table-mode')
+call dein#add('suan/vim-instant-markdown', {'on_ft': 'markdown'})
+call dein#add('tmhedberg/SimpylFold', {'on_ft': 'python'})
+call dein#add('HerringtonDarkholme/yats.vim')
+call dein#add('tmux-plugins/vim-tmux')
+call dein#add('octol/vim-cpp-enhanced-highlight')
+call dein#add('Shougo/denite.nvim')
+
 set conceallevel=0
+call dein#add('mhartington/vim-folds')
+call dein#add('Yggdroot/indentLine')
+call dein#add('itmammoth/doorboy.vim')
+call dein#add('valloric/MatchTagAlways', {'on_ft': 'html'})
+call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-rhubarb')
+call dein#add('jreybert/vimagit')
+call dein#add('airblade/vim-gitgutter')
+call dein#add('Xuyuanp/nerdtree-git-plugin')
+call dein#add('tpope/vim-repeat')
+call dein#add('editorconfig/editorconfig-vim')
+call dein#add('scrooloose/nerdtree')
+call dein#add('AndrewRadev/switch.vim')
+call dein#add('christoomey/vim-tmux-navigator')
+call dein#add('tmux-plugins/vim-tmux-focus-events')
+call dein#add('tomtom/tcomment_vim')
+call dein#add('mattn/emmet-vim', {'on_ft': 'html'})
+call dein#add('Chiel92/vim-autoformat')
+call dein#add('ap/vim-css-color')
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+call dein#add('haya14busa/incsearch.vim')
+call dein#add('haya14busa/incsearch-easymotion.vim')
+call dein#add('haya14busa/incsearch-fuzzy.vim')
+call dein#add('easymotion/vim-easymotion')
+call dein#add('neomake/neomake')
 
-" procs / make
-Plug 'Shougo/vimproc.vim', {'build' : 'make'}
-Plug 'neomake/neomake'
+" deoplete stuff
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('carlitux/deoplete-ternjs')
+call dein#add('Shougo/neco-vim', {'on_ft': 'vim'})
+call dein#add('Shougo/neoinclude.vim')
+call dein#add('Konfekt/FastFold')
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('honza/vim-snippets')
+call dein#add('matthewsimo/angular-vim-snippets')
+call dein#add('magarcia/vim-angular2-snippets')
+call dein#add('heavenshell/vim-jsdoc')
+call dein#add('tpope/vim-surround')
+call dein#add('mhinz/vim-sayonara')
+call dein#add('terryma/vim-multiple-cursors')
+call dein#add('itchyny/vim-cursorword')
+call dein#add('rhysd/nyaovim-popup-tooltip')
+call dein#add('ryanoasis/vim-devicons')
+call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
+call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
+call dein#add('w0ng/vim-hybrid')
+call dein#add('NLKNguyen/papercolor-theme')
+call dein#add('joshdick/onedark.vim')
+call dein#add('godlygeek/csapprox')
+call dein#add('altercation/vim-colors-solarized')
+call dein#add('MaxSt/FlatColor')
+call dein#add('mhartington/oceanic-next')
 
-" git
-Plug 'tpope/vim-fugitive'
-Plug 'jreybert/vimagit'
-Plug 'airblade/vim-gitgutter'
+if dein#check_install()
+  call dein#install()
+  let pluginsExist=1
+endif
 
-" completion
-Plug 'Shougo/deoplete.nvim'
-Plug 'Shougo/neco-vim', {'on_ft': 'vim'}
-Plug 'Shougo/neoinclude.vim'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'honza/vim-snippets'
-Plug 'rhysd/nyaovim-popup-tooltip'
-
-"utils
-Plug 'tpope/vim-surround'
-Plug 'mhinz/vim-sayonara'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'itchyny/vim-cursorword'
-Plug 'Konfekt/FastFold'
-Plug 'tpope/vim-repeat'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'AndrewRadev/switch.vim'
-Plug 'tomtom/tcomment_vim'
-Plug 'Chiel92/vim-autoformat'
-Plug 'mhartington/vim-folds'
-Plug 'Yggdroot/indentLine'
-Plug 'itmammoth/doorboy.vim'
-Plug 'tpope/vim-rhubarb'
-
-" tmux
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'tmux-plugins/vim-tmux'
-
-" json
-Plug 'elzr/vim-json', {'on_ft': 'json'}
-
-" markdown
-Plug 'tpope/vim-markdown', {'on_ft': 'markdown'}
-Plug 'jtratner/vim-flavored-markdown', {'on_ft': 'markdown'}
-Plug 'suan/vim-instant-markdown', {'on_ft': 'markdown'}
-
-" html
-Plug 'mattn/emmet-vim', {'on_ft': 'html'}
-Plug 'valloric/MatchTagAlways', {'on_ft': 'html'}
-
-" css
-Plug 'ap/vim-css-color'
-Plug 'hail2u/vim-css3-syntax', {'on_ft':['css','scss']}
-
-" javascript / typescript
-Plug 'matthewsimo/angular-vim-snippets'
-Plug 'magarcia/vim-angular2-snippets'
-Plug 'carlitux/deoplete-ternjs'
-Plug 'heavenshell/vim-jsdoc'
-Plug 'othree/yajs.vim', {'on_ft': 'javascript'}
-Plug 'othree/jsdoc-syntax.vim', {'on_ft':['javascript', 'typescript']}
-Plug 'othree/es.next.syntax.vim', {'on_ft': 'javascript'}
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'moll/vim-node'
-
-" c / c++
-Plug 'vivien/vim-linux-coding-style'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'justinmk/vim-syntax-extra'
-
-" Finders
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'haya14busa/incsearch-fuzzy.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" Indexation
-Plug 'godlygeek/csapprox'
-Plug 'joe-skb7/cscope-maps'
-
-" Colorschemes
-Plug 'altercation/vim-colors-solarized'
-Plug 'MaxSt/FlatColor'
-Plug 'mhartington/oceanic-next'
-Plug 'flazz/vim-colorschemes'
-Plug 'rakr/vim-one'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'w0ng/vim-hybrid'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'joshdick/onedark.vim'
-
-call plug#end()
+call dein#end()
 filetype plugin indent on
 " }}}
 
@@ -118,6 +98,7 @@ filetype plugin indent on
 
 " source ~/.local.vim
 " Neovim Settings
+
 set undodir=~/.config/nvim/undodir
 set undofile
 
@@ -134,7 +115,7 @@ set noshowmode
 set nobackup
 set noswapfile
 filetype on
-set tabstop=8 shiftwidth=2 expandtab
+set tabstop=2 shiftwidth=2 expandtab
 set conceallevel=0
 " block select not limited by shortest line
 set virtualedit=
@@ -171,7 +152,7 @@ let g:dein#install_progress_type = 'none'
 
 " Auto chdir to current buffer
 " autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! cd %:h | endif
-" set autochdir
+set autochdir
 
 " }}}
 
@@ -180,15 +161,15 @@ let g:dein#install_progress_type = 'none'
 " Navigate between display lines
 noremap  <silent> k gk
 noremap  <silent> j gj
-
 " Neovim terminal mapping
 " terminal 'normal mode'
 tmap <esc> <c-\><c-n><esc><cr>
 " ,f to format code, requires formatters: read the docs
-noremap <c-f> :Ag<CR>
+noremap <c-f> :Autoformat<CR>
 noremap <leader>TM :TableModeToggle<CR>
 noremap J 5j
 noremap K 5k
+
 nnoremap ; :
 
 let g:multi_cursor_next_key='<C-n>'
@@ -309,7 +290,7 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 syntax enable
 set background=dark
 let g:flatcolor_terminal_italics = 1
-
+colorscheme flatcolor
 " no need to fold things in markdown all the time
 let g:vim_markdown_folding_disabled = 1
 " disable markdown auto-preview. Gets annoying
@@ -317,17 +298,11 @@ let g:instant_markdown_autostart = 0
 " Keep my termo window open when I navigate away
 autocmd TermOpen * set bufhidden=hide
 
-" hi Normal guibg=none
-" hi Folded guibg=#3c3c3c guifg=#aaaaaa
-" hi LineNr guibg=#3c3c3c guifg=#91ddff
-" hi Directory guifg=#91ddff
-" hi CursorLine guibg=#4c4c4c
-
-hi Normal ctermbg=black
-hi Folded ctermbg=none
-
-set termguicolors 
-colorscheme gruvbox
+hi Normal guibg=none
+hi Folded guibg=#3c3c3c guifg=#aaaaaa
+hi LineNr guibg=#3c3c3c guifg=#91ddff
+hi Directory guifg=#91ddff
+hi CursorLine guibg=#4c4c4c
 
 "}}}
 
@@ -393,7 +368,6 @@ let g:NERDTreeAutoDeleteBuffer=1
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
 let g:NERDTreeChDirMode = 2
-let g:NERDTreeShowBookmarks = 1
 
 " let g:NERDTreeFileExtensionHighlightFullName = 1
 "
@@ -487,9 +461,28 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 "}}}
 
-" FZF -----------------------------------------------------------------------{{{
-nnoremap <C-P> :FZF<cr>
-"  }}}
+" CTRLP ---------------------------------------------------------------------{{{
+
+let g:ctrlp_match_window = 'bottom,order:btt'
+let g:ctrlo_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+if exists("g:ctrlp_user_command")
+  unlet g:ctrlp_user_command
+endif
+set wildignore+=*\\node_modules\\**
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --ignore-dir=node_modules --hidden -g ""'
+endif
+
+let g:ctrlp_show_hidden = 1
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.tmp/*,*/.sass-cache/*,*/node_modules/*,*.keep,*.DS_Store,*/.git/*
+let g:ctrlp_show_hidden = 1
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.tmp/*,*/.sass-cache/*,*/node_modules/*,*.keep,*.DS_Store,*/.git/
+
+"}}}
 
 " Navigate between vim buffers and tmux panels ------------------------------{{{
 
@@ -509,7 +502,7 @@ set hidden
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='one'
+let g:airline_theme='PaperColor'
 cnoreabbrev <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'Sayonara' : 'x'
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 "}}}
