@@ -81,6 +81,7 @@ Plug 'moll/vim-node'
 Plug 'vivien/vim-linux-coding-style'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'justinmk/vim-syntax-extra'
+Plug 'arakashic/chromatica.nvim'
 
 " Finders
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -99,6 +100,7 @@ Plug 'godlygeek/csapprox'
 Plug 'joe-skb7/cscope-maps'
 
 " Colorschemes
+Plug 'zefei/vim-colortuner'
 Plug 'altercation/vim-colors-solarized'
 Plug 'MaxSt/FlatColor'
 Plug 'mhartington/oceanic-next'
@@ -109,6 +111,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'w0ng/vim-hybrid'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'joshdick/onedark.vim'
+Plug 'zanglg/nova.vim'
+Plug 'KeitaNakamura/neodark.vim'
 
 call plug#end()
 filetype plugin indent on
@@ -185,7 +189,10 @@ noremap  <silent> j gj
 " terminal 'normal mode'
 tmap <esc> <c-\><c-n><esc><cr>
 " ,f to format code, requires formatters: read the docs
-noremap <c-f> :Ag<CR>
+noremap <c-a> :Ag<CR>
+noremap <c-f> :BLines<CR>
+noremap <c-b> :Buffers<CR>
+
 noremap <leader>TM :TableModeToggle<CR>
 noremap J 5j
 noremap K 5k
@@ -326,8 +333,11 @@ autocmd TermOpen * set bufhidden=hide
 hi Normal ctermbg=black
 hi Folded ctermbg=none
 
-set termguicolors 
-colorscheme gruvbox
+set termguicolors
+
+hi Normal guibg=#202020
+colorscheme hybrid
+
 
 "}}}
 
@@ -509,7 +519,7 @@ set hidden
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='one'
+let g:airline_theme='hybrid'
 cnoreabbrev <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'Sayonara' : 'x'
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 "}}}
